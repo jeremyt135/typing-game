@@ -1,0 +1,245 @@
+:root {
+  --footer-height: 20px;
+  --main-bg-color: #000;
+  --main-color: #fff;
+}
+
+html {
+  font-family: 'Orbitron', Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--main-bg-color);
+  color: var(--main-color);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+input,
+button {
+  font-family: inherit;
+  outline: none;
+}
+
+p,
+h1,
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
+.link,
+.link:hover,
+.link:active,
+.link:focus {
+  color: var(--main-color);
+  text-decoration: underline;
+}
+
+.link:hover,
+.link:active,
+.link:focus {
+  filter: brightness(75%);
+  outline: none;
+}
+
+.link--github {
+  padding: 0 5px;
+}
+
+.container {
+  box-sizing: border-box;
+  margin: 20px auto -1 * var(--footer-height);
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  min-height: calc(100% - var(--footer-height));
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  box-sizing: border-box;
+  height: var(--footer-height);
+  width: 800px;
+  padding: 0 15px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: var(--main-bg-color);
+}
+
+.game {
+  position: relative;
+  width: 800px;
+  height: 600px;
+  margin: 20px auto;
+  vertical-align: middle;
+  border: 2px solid #ffffe2;
+}
+
+.mode {
+  width: 100%;
+  height: 10%;
+  position: relative;
+}
+
+.mode__info {
+  width: 100%;
+  height: 100%;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  text-align: center;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.mode__info--hidden {
+  visibility: hidden;
+}
+
+.life,
+.clock,
+.score {
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.gameplay {
+  width: 100%;
+  height: 70%;
+  position: relative;
+}
+
+.menu {
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  position: absolute;
+  background-color: rgba(128, 128, 128, 0.8);
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu--hidden {
+  display: none;
+}
+
+.menu__heading {
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4), 1px -1px 0 rgba(0, 0, 0, 0.4),
+    -1px 1px 0 rgba(0, 0, 0, 0.4), 1px 1px 0 rgba(0, 0, 0, 0.4);
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.menu__heading--large {
+  font-size: 40px;
+}
+
+.menu__heading--medium {
+  font-size: 30px;
+}
+
+.menu__options {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu__button {
+  width: fit-content;
+  height: fit-content;
+  margin-bottom: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  outline: none;
+  background: linear-gradient(#7ad468, #61b350);
+  color: #fff;
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4), 1px -1px 0 rgba(0, 0, 0, 0.4),
+    -1px 1px 0 rgba(0, 0, 0, 0.4), 1px 1px 0 rgba(0, 0, 0, 0.4);
+  font-size: 36px;
+}
+
+.menu__button:focus,
+.menu__button:hover,
+.menu__button:active {
+  background: linear-gradient(#3ea729, #419131);
+}
+
+.menu__button--hidden {
+  display: none;
+}
+
+.target-area {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  grid-template-rows: 100%;
+  overflow: hidden;
+}
+
+.target {
+  align-self: start;
+  justify-self: center;
+
+  position: relative;
+  pointer-events: none;
+
+  display: inline-flex;
+  flex-flow: column nowrap;
+  pointer-events: none;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.controls {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-input {
+  width: 80%;
+  height: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.game-input--hidden {
+  visibility: hidden;
+}
+
+.instructions {
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+}
+
+.instructions__text {
+  font-size: 20px;
+}

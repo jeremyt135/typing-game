@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Typing Game</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Orbitron&display=swap"
+      rel="stylesheet"
+    />
+    <link href="main.css" rel="stylesheet" />
+    <link href="ships.css" rel="stylesheet" />
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script src="wordlist.bundle.js" defer></script>
+    <script src="index.bundle.js" defer></script>
+  </head>
+  <body>
+    <main class="container">
+      <div class="game space-theme">
+        <section class="mode hud">
+          <div class="mode__info mode__info--hidden">
+            <p class="life">
+              Life: <span class="life__points life__points--healthy">0</span>
+            </p>
+            <p class="clock"><span class="time time--high">00:00:000</span></p>
+            <p class="score">0</p>
+          </div>
+        </section>
+        <section class="gameplay">
+          <section id="playMenu" class="menu">
+            <h1 class="menu__heading menu__heading--large">Type Attack</h1>
+            <div class="menu__options">
+              <button id="playButton" class="menu__button">Play</button>
+            </div>
+          </section>
+          <div id="gameOverMenu" class="menu menu--hidden">
+            <h1 class="menu__heading menu__heading--large">Game Over</h1>
+            <h2 class="menu__heading menu__heading--medium">
+              Final score: <span id="menuScore">0</span>
+            </h2>
+            <h2 class="menu__heading menu__heading--medium">
+              Your WPM: <span id="menuWpm">0</span>
+            </h2>
+            <div class="menu__options">
+              <button id="playAgainButton" class="menu__button">
+                Play Again
+              </button>
+            </div>
+          </div>
+          <div id="pauseMenu" class="menu menu--hidden">
+            <h1 class="menu__heading menu__heading--large">Paused</h1>
+            <h2 class="menu__heading menu__heading--medium">
+              Press ESC Again to Unpause
+            </h2>
+          </div>
+          <div class="target-area"></div>
+        </section>
+        <section class="controls">
+          <input
+            type="text"
+            name="wordInput"
+            class="game-input game-input--hidden console"
+            spellcheck="false"
+          />
+        </section>
+      </div>
+      <section class="instructions">
+        <p class="instructions__text">
+          Destroy the UFOs by typing the words displayed on them!<br />But be
+          careful, only one UFO can be destroyed at a time! <br /><br />
+          (Pressing ESC will pause the game)
+        </p>
+      </section>
+    </main>
+    <footer class="footer">
+      a project by
+      <a
+        href="https://github.com/jeremyt135"
+        target="_blank"
+        rel="noreferrer noopener"
+        class="link link--github"
+      >
+        Jeremy Taylor</a
+      >
+    </footer>
+  </body>
+</html>
